@@ -1,17 +1,79 @@
-body {
-  color: #ffffff;
-  background-color: #112d28;
-  font-family: 'OpenSans';
+:root {
+
+  --color-white: #FFF;
+  --color-dark-green: #112d28;
+  --color-middle-green: #498c7e; 
+  --color-light-green: #6fccbe; 
+
+  --main-font: 'OpenSans';
+  --heading-font: 'OpenSansBold';
+
+  --padding-xs: 0.75rem;    
+  --padding-s: 1rem;    
+  --padding-sm: 1.5rem;  
+  --padding-m: 2rem;
+  --padding-l: 4rem; 
+  --padding-xl: 6rem;
+
+  --line-heigth-base: 2.0;
 }
 
-.block{
+body {
+  color: var(--color-white);
+  background-color: var(--color-dark-green);
+  font-family: var(--main-font);
+  min-height: 100vh;
+}
+
+/* Composition */
+  /* Taken from BOOTSTRAP */
+
+/* Utility */
+.bg-color-dark-green{
+  background-color: var(--dark-green);
+}
+
+.bg-color-light-green{
+  background-color: var(--light-green);
+  background-image: url("../img/bridge.png");
+  background-position: bottom left; 
+  background-repeat: no-repeat;
+}
+
+.padding-footer{
+  position: relative;
+  width: 100%;
+  padding-right: var(--padding-l);
+  padding-left: var(--padding-l);
+}
+
+.padding-xl {
+  padding-top: var(--padding-xl);
+  padding-bottom: var(--padding-xl);
+}
+
+.padding-footer-header-32{
+  padding-top: var(--padding-m);
+}
+
+.padding-footer-text-12{
+  padding-top: var(--padding-xs);
+  padding-bottom: var(--padding-m);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
+}
+
+/* Block */
+.block-align{
   align-self: flex-end;
 }
 
 .row1{
-  background-image: url("../img/14-2.png");
+  background-image: url("../img/14.png");
   background-repeat: no-repeat;
-  background-size: 40%;
+  background-size: 42%;
   background-position: center; 
 }
 
@@ -25,111 +87,46 @@ body {
 .row3{
   background-image: url("../img/22.png");
   background-repeat: no-repeat;
-  background-size: 40%;
+  background-size: 42%;
   background-position: center; 
 }
 
-h1, h2, h3, h4 {
-  font-family: 'OpenSansBold';
-}
-
 .text-alinea{
-  line-height: 2.0;
-}
-
-.bg-color-dark-green{
-  background-color: var(--dark-green);
-}
-
-.padding-footer{
-  position: relative;
-  width: 100%;
-  padding-right: 65px !important;
-  padding-left: 65px !important;;
-}
-
-.padding-xl {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.button-default {
-  color: #fff;
-  background-color: #6fccbe;
-  text-align: center;
-  padding: 5px 10px;
-  margin: 10px;
-  display: inline-block;
-}
-
-.button-default-white {
-  color: #498c7e;
-  background-color: #fff;
-  text-align: center;
-  padding: 5px 10px;
-  margin: 10px;
-  display: inline-block;
-}
-
-.img3 {
-  width: 90%;
+  line-height: var(--line-heigth-base);
 }
 
 .img1 {
-  width: 100%;
+  width: 80%;
+  -webkit-filter: drop-shadow(24px 24px 0px rgba(0,0,0,0.28));
+  filter: drop-shadow(24px 24px 0px rgba(0,0,0,0.28));
+  padding-bottom: var(--padding-s);
 }
 
 .img2 {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-}
-
-.img-wrap-parent {
-  filter: drop-shadow(24px 24px 0px rgba(0,0,0,0.28));
-}
-
-.img-wrap  {
-  clip-path: polygon(9% 0, 100% 0, 91% 100%, 0% 100%);
-}
-
-.img-wrap2-parent {
-  position: relative;
   height: 190px;
-  width: auto;
-  background: #fff;
-  box-sizing: border-box;
-  clip-path: polygon(11% 0, 100% 0, 89% 100%, 0% 100%);
-  -webkit-clip-path: polygon(11% 0, 100% 0, 89% 100%, 0% 100%);
+  width: 338px;
 }
 
-.img-wrap2  {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  clip-path: polygon(11% 0, 100% 0, 89% 100%, 0% 100%);
-  -webkit-clip-path: polygon(11% 0, 100% 0, 89% 100%, 0% 100%);
-  height: 184px;
+.img3 {
+  width: 88%;
 }
 
-.padding-footer-text-45{
-  padding-top: 45px;
-}
-
-.padding-footer-text-12{
-  padding-top: 12px;
-}
-
-.button-slanted {
+.button {
+  cursor: pointer;
+  color: var(--color-white); 
+  background-color: var(--color-light-green);
+  text-align: center;
+  padding: 5px 10px;
+  margin: 10px;
+  display: inline-block;
+  width: 140px;
+  height: 50px;
   -ms-transform: skewX(-10deg);
   -webkit-transform: skewX(-10deg);
   transform: skewX(-10deg);
 }
 
-.button-slanted-content {
+.button-content {
   -ms-transform: skewX(10deg);
   -webkit-transform: skewX(10deg);
   transform: skewX(10deg);  
@@ -137,21 +134,8 @@ h1, h2, h3, h4 {
   padding: 6px 0;
 }
 
-.button-fixedwidth {
-  width: 140px;
-  height: 50px;
-}
-
-.grid-flow > * + * {
-  margin-top: 2rem;
-}
-
-.bg-color-light-green{
-  background-color: var(--light-green);
-}
-
-.center-alignment{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Exception */
+.button[data-type="white"] {
+  color: var(--color-middle-green); 
+  background-color: var(--color-white); 
 }
